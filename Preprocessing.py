@@ -11,7 +11,7 @@ df = pd.read_csv(r"C:\Users\user\Desktop\model_features.csv")
 
 # 2. 缺失值處理 (Imputation)
 # 10月從未購買過的人，Monetary、purchase_count、轉換率會是 NaN，需自動補 0
-df['Monetary'] = df['Monetary'].fillna(0)
+df['monetary'] = df['monetary'].fillna(0)
 df['purchase_count'] = df['purchase_count'].fillna(0)
 df['cart_to_purchase_rate'] = df['cart_to_purchase_rate'].fillna(0)
 
@@ -20,7 +20,7 @@ df['cart_to_purchase_rate'] = df['cart_to_purchase_rate'].fillna(0)
 
 # 3. 提取基礎特徵欄位（排除 user_id 與答案 Is_Churn）
 features = [
-    'Recency', 'Frequency', 'Monetary', 
+    'recency', 'frequency', 'monetary', 
     'view_count', 'cart_count', 'purchase_count',
     'cart_to_purchase_rate', 'active_days'
 ]
